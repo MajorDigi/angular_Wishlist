@@ -1,5 +1,13 @@
 <div class="container">
-  <ul class="wish-list">
+  <!-- Use ngIf conditional -->
+   <!-- Test: Uncomment app.component.ts/items -->
+    <!-- Add then/else, use <ng-template></ng-template>, arrgument -->
+  <div *ngIf="items.length === 0; then noItems else showItems"></div> 
+    <ng-template #noItems>
+      There are no wish items to display
+    </ng-template>
+    <ng-template #showItems>
+      <ul *ngIf="items.length > 0" class="wish-list">
     <li *ngFor="let item of items">
       <div class="form-check">
         <label class="form-check-label">
@@ -10,6 +18,11 @@
 
   </ul>
  
-</div>
+    </ng-template>
+  </div>
+
+
+  
+
 
 <!-- <router-outlet /> -->
