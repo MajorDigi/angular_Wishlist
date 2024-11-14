@@ -11,10 +11,14 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  items = [
-    new WishItem('Learn Angular'),
-    new WishItem('Get Coffee', true),
-    new WishItem('Find grass that cuts itself')
-  ]
+  // items : any = [
+    // new WishItem('Learn Angular'),
+    // new WishItem('Get Coffee', true),
+    // new WishItem('Find grass that cuts itself')
+  // ]
+    items : WishItem[] = [
+
+    ];
+  
   title = 'angular_Wishlist';
 }
