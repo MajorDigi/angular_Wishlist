@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Use ngIf conditional -->
    <!-- Test: Uncomment app.component.ts/items -->
-    <!-- Add then/else, use <ng-template></ng-template>, arrgument -->
+    <!-- Added then/else, use <ng-template></ng-template>, argument -->
   <div *ngIf="items.length === 0; then noItems else showItems"></div> 
     <ng-template #noItems>
       There are no wish items to display
