@@ -34,6 +34,6 @@ export class AppComponent {
   title = 'angular_Wishlist';
 
   toggleItem(e : any) {
-     console.log('clicked!');
+     console.log(e);
   }
 }
