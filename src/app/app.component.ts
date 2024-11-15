@@ -33,7 +33,8 @@ export class AppComponent {
   
   title = 'angular_Wishlist';
 
-  toggleItem(e : any) {
-     console.log(e);
+  toggleItem(item : WishItem) {
+    item.isComplete = !item.isComplete;
+     console.log(item);
   }
 }
