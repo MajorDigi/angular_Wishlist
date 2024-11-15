@@ -20,17 +20,16 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 })
 
 export class AppComponent {
-  // items = [
-  //   new WishItem('Learn Angular'),
-  //   new WishItem('Get Coffee', true),
-  //   new WishItem('Find grass that cuts itself')
-  // ]
-  // items : any[]=[
+  items = [
+    new WishItem('Learn Angular'),
+    new WishItem('Get Coffee', true),
+    new WishItem('Find grass that cuts itself')
+  ]
+  //---------------------------------------------------------------------
+  // items : any[]=[]
 
-  // ]
-    items : WishItem[] = [
-
-    ];
+  //-----------------------------------------------------------------------------
+    // items : WishItem[] = [];
   
   title = 'angular_Wishlist';
 }

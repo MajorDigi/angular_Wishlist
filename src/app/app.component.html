@@ -2,9 +2,11 @@
   <!-- Use ngIf conditional -->
    <!-- Test: Uncomment app.component.ts/items -->
     <!-- Added then/else, use <ng-template></ng-template>, argument -->
-  <div *ngIf="items.length === 0; then noItems else showItems"></div> 
+  <div *ngIf="items.length === 0; else showItems">
+    There are no wish items to display
+  </div> 
     <ng-template #noItems>
-      There are no wish items to display
+     
     </ng-template>
     <ng-template #showItems>
       <ul *ngIf="items.length > 0" class="wish-list">
