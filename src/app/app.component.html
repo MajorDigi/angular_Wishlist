@@ -18,6 +18,7 @@
           type="checkbox"
           [checked]="item.isComplete"
           [attr.data-index]="ii"
+          (click)="toggleItem($event)"
           > {{item.wishText}}
           </label>
       </div>
