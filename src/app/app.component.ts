@@ -20,29 +20,43 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
   styleUrls: ['./app.component.css'], // Corrected to styleUrls
 
 })
-
-export class AppComponent {
-  items : WishItem[] = [
-      // new WishItem('Learn Angular'),
-      // new WishItem('Get Coffee', true),
-      // new WishItem('Find grass that cuts itself')
-  ];
   //---------------------------------------------------------------------
   // items : any[]=[]
 
   //-----------------------------------------------------------------------------
     // items : WishItem[] = [];
+export class AppComponent {
+  items : WishItem[] = [
+      new WishItem('Learn Angular'),
+      new WishItem('Get Coffee', true),
+      new WishItem('Find grass that cuts itself')
+  ];
+  
+    listFilter : String = '0';
 
     newWishText = '';
   
-  title = 'angular_Wishlist';
+    title = 'angular_Wishlist';
+
+    visibleItems : WishItem[] = this.items;
 
   addNewWish() {
     this.items.push(new WishItem(this.newWishText));
     this.newWishText = '';
     //todo: add wish to items array
     //clear the textbox
+}
+
+  filterChanged(value: any) {
+    if (value === '0') { 
+      this.visibleItems = this.items;
+    } else if (value === '1') {
+      this.visibleItems = this.items.filter(item => !item.isComplete);
+    } else {
+      this.visibleItems = this.items.filter(item => item.isComplete);
+    }
   }
+
 
   toggleItem(item : WishItem) {
     item.isComplete = !item.isComplete;
