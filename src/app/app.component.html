@@ -25,7 +25,7 @@
      class="from-select" [(ngModel)]="listFilter"
      > 
 <!-- Removed ngmodelChanged -->
- 
+
      <option value="0">All</option>
      <option value="1">Unfulfilled</option>
      <option value="2">Fulfilled</option>
@@ -34,32 +34,11 @@
 </div>
 
 <div class="'row mt-3">
-  <!-- Use ngIf conditional -->
-   <!-- Test: Uncomment app.component.ts/items -->
-    <!-- Added then/else, use <ng-template></ng-template>, argument -->
-    <div *ngIf="visibleItems.length === 0; else showItems">
-      There are no wish items to display
-    </div> 
-      <!-- <ng-template #noItems>
-       
-      </ng-template> -->
-      <ng-template #showItems>
-        <ul class="wish-list">
-          <li *ngFor="let item of visibleItems; index as ii">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input 
-                  class="checkbox" 
-                  type="checkbox"
-                  [checked]="item.isComplete"
-                  [attr.data-index]="ii"
-                  (click)="toggleItem(item)"
-                  > {{item.wishText}}
-              </label>
-             </div>
-          </li>
-        </ul>
-      </ng-template>
+  <wish-list
+    [items]="visibleItems"
+  ></wish-list>
+
+  
 </div>
   
 

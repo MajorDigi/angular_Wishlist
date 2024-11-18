@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { WishItem } from '../shared/modules/wishItem';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { WishListComponent } from './wish-list/wish-list.component'; // Adjust path as necessary
 
 const filters = [
   (item : WishItem) => item, //For index zero use truth
@@ -21,7 +22,7 @@ const filters = [
 @Component({
   selector: 'app-root',
   standalone: true, // This makes AppComponent standalone
-  imports: [RouterOutlet, CommonModule, FormsModule], // Add CommonModule and RouterOutlet
+  imports: [RouterOutlet, CommonModule, FormsModule,WishListComponent], // Add CommonModule and RouterOutlet
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'], // Corrected to styleUrls
 
