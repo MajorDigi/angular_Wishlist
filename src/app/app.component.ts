@@ -4,6 +4,12 @@ import { WishItem } from '../shared/modules/wishItem';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 
+const filters = [
+  (item : WishItem) => item, //For index zero use truth
+  (item : WishItem) => !item.isComplete,
+  (item : WishItem) => item.isComplete
+]
+
 // @Component({
 //   selector: 'app-root',
 //   standalone: true,
@@ -32,31 +38,35 @@ export class AppComponent {
       new WishItem('Find grass that cuts itself')
   ];
   
-    listFilter : String = '0';
+    listFilter : any = '0';
 
     newWishText = '';
   
     title = 'angular_Wishlist';
 
-    visibleItems : WishItem[] = this.items;
+    get visibleItems() : WishItem[] {
+
+      // let value = this.listFilter;
+      // if (value === '0') { 
+      //   return this.items;
+      // } else if (value === '1') {
+      //   return this.items.filter(item => !item.isComplete);
+      // } else {
+      //   return this.items.filter(item => item.isComplete);
+      // }
+      return this.items.filter(filters[this.listFilter]);
+    
+    };
 
   addNewWish() {
+     //todo: add wish to items array
     this.items.push(new WishItem(this.newWishText));
-    this.newWishText = '';
-    //todo: add wish to items array
     //clear the textbox
+    this.newWishText = ''; 
 }
+  // filterChanged() {
 
-  filterChanged(value: any) {
-    if (value === '0') { 
-      this.visibleItems = this.items;
-    } else if (value === '1') {
-      this.visibleItems = this.items.filter(item => !item.isComplete);
-    } else {
-      this.visibleItems = this.items.filter(item => item.isComplete);
-    }
-  }
-
+  // }
 
   toggleItem(item : WishItem) {
     item.isComplete = !item.isComplete;

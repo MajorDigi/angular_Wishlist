@@ -23,8 +23,9 @@
   <div class="col-sm-2">
     <select
      class="from-select" [(ngModel)]="listFilter"
-     (ngModelChange)="filterChanged($event)"
-     >
+     > 
+<!-- Removed ngmodelChanged -->
+ 
      <option value="0">All</option>
      <option value="1">Unfulfilled</option>
      <option value="2">Fulfilled</option>
