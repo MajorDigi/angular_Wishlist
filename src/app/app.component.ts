@@ -69,8 +69,8 @@ export class AppComponent {
 
   // }
 
-  toggleItem(item : WishItem) {
-    item.isComplete = !item.isComplete;
-     console.log(item);
-  }
+  // toggleItem(item : WishItem) {
+  //   item.isComplete = !item.isComplete;
+  //    console.log(item);
+  // }
 }

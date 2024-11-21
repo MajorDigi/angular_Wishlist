@@ -14,7 +14,7 @@
 // }
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common'; // For common directives like ngIf and ngFor
-
+import { WishItem } from '../../shared/modules/wishItem';
 @Component({
   selector: 'wish-list',
   standalone: true,
@@ -23,12 +23,12 @@ import { CommonModule } from '@angular/common'; // For common directives like ng
   styleUrls: ['./wish-list.component.css']
 })
 export class WishListComponent {
-  @Input() items: any[] = []; // Input for the array of items
+  @Input() wishes : WishItem[] = []; // Input for the array of items
 
   // Computed property to get visible items
-  get visibleItems() {
-    return this.items; // Modify this logic as needed to filter or process the items
-  }
+  // get visibleItems() {
+    // return this.items; // Modify this logic as needed to filter or process the items
+  // }
 
   // Method to handle item toggling
   toggleItem(item: any): void {
